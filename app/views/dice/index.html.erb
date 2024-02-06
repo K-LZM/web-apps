@@ -7,15 +7,23 @@
 </head>
 <body>
   <h1> Dice Machine </h1>
-
+  
+  <form>
+    <label for="num_dice">Number of dice:</label>
+    <input type="integer" name="num_dice" id="num_dice">
+    <% num_dice = num_dice %>
+    <button>Submit</button>
+  </form> 
 
   <% total = 0 %>
 
   <% for dice in 0..3 %>
+
     <% num = rand(1..6) %>
     <% total = total + num %>
-    <p> Dice<%= dice+1 %> : <%= num %></p>
-    <img src="/images/dice/<%= num %>">
+    <!--<p> Dice<%= dice+1 %> : <%= num %></p>-->
+    <img src="/images/dice/<%= num %>.svg">
+
   <% end %>
   <p>The total is <%= total %></p>
 
